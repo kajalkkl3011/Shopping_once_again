@@ -36,21 +36,20 @@ function View() {
           <p>{postContent.category}</p>
           <span>{postContent.createdAt}</span>
         </div>
-        <div className="productDescription">
+        <div className="productDescription productDetails">
             <p className="p-bold">Product Description</p>
             <p>{postContent.description}</p>
             
           </div>
         {userDetails &&
-          <div className="contactDetails">
+          <div className="contactDetails productDetails">
             <p className="p-bold">Seller details</p>
             <p>Name : {userDetails.name}</p>
             <p>Phone : {userDetails.phone}</p>
           </div>
         }
        <div className="cart-action">
-          <button>Cart</button>
-          <button>Wish List</button>
+          <button className="btn" onClick={console.log('handle wish list here.')}><i class="fa fa-shopping-bag"></i>Wish List</button>
        </div>
       </div>
     </div>
