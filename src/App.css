@@ -1,0 +1,48 @@
+.main-wrapper{
+    text-align: center;
+}
+
+.main-wrapper h1{
+    font-weight: 700 !important;
+}
+
+.wishlist-table{
+    width: 100%;
+}
+
+.table-wrapper{
+    margin: 128px 0;
+}
+
+.wishlist-table th,td{
+    /* text-align: left; */
+    padding: 16px;
+    font-weight: 700;
+    border: 1px solid;
+}
+
+.header-wrapper{
+    padding-top: 100px;
+}
+
+.wishlist-icon{
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+
+.main-div{
+    background-color: #ebeeef;
+}
+
+.wishlist-img{
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+}
+
+td div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

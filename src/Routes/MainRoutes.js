@@ -6,7 +6,7 @@ import Login from '../Pages/Login'
 import CreatePost from '../Pages/CreatePost'
 import ViewPost from '../Pages/ViewPost'
 import ViewMore from '../Pages/ViewMore'
-import WishList from '../Pages/ViewMore'
+import WishList from '../Pages/wishlist'
 
 
 
