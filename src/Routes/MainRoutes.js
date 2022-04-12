@@ -6,6 +6,7 @@ import Login from '../Pages/Login'
 import CreatePost from '../Pages/CreatePost'
 import ViewPost from '../Pages/ViewPost'
 import ViewMore from '../Pages/ViewMore'
+import WishList from '../Pages/ViewMore'
 
 
 
@@ -15,6 +16,9 @@ function MainRoutes() {
         <Router>
             <Route exact path="/">
                 <Home />
+            </Route>
+            <Route exact path="/wishlist">
+                <WishList />
             </Route>
             <Route path="/signup">
                 <Signup />
@@ -31,10 +35,6 @@ function MainRoutes() {
             <Route path="/viewmore">
                 <ViewMore />
             </Route>
-
-
-
-
         </Router>
     )
 }
