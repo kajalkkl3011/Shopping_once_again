@@ -32,9 +32,9 @@ export default function Signup() {
       });
   };
   return (<>
-    {loading && <SignUpLoading/> } <div>
-      <div className="signupParentDiv">
-        <img width="200px" height="200px" src={Logo} alt=""></img>
+    {loading && <SignUpLoading/> } <div className="login-sign-up-wrap">
+      <div className="signupParentDiv from-wrap">
+        <div class="soa-logo"><a href="/">SOA</a></div>
         <form onSubmit={handleSubmit}>
           <label>Full Name</label>
           <br />
