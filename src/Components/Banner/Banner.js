@@ -9,6 +9,8 @@ function Banner() {
   return (
     <div className="bannerParentDiv">
       <div className="bannerChildDiv">
+        <div className="banner">
+          <img src="../../../Images/bg-img.png" alt="" />
         <div className="menuBar">
           <div className="categoryMenu">
             <select
@@ -36,8 +38,6 @@ function Banner() {
             <span onClick={()=>setCategory("Tablets")} >Tablets</span>
           </div> */}
         </div>
-        <div className="banner">
-          <img src="../../../Images/banner copy.png" alt="" />
         </div>
       </div>
      { category!=null && <DynamicPosts category={category}/>  }
