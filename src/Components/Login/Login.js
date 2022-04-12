@@ -32,7 +32,7 @@ function Login() {
           <input
             className="input"
             type="email"
-            placeholder="sijeesh@gmail.com"
+            placeholder="Please enter your Email"
             name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -44,7 +44,7 @@ function Login() {
             className="input"
             type="password"
             name="password"
-            placeholder="password"
+            placeholder="Enter password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />

@@ -21,7 +21,7 @@
 }
 
 .brand-text{
-  width: 13vw;
+  width: 100px;
   color: white;
   padding: 10px 15px;
   border-radius: 25px;
@@ -29,6 +29,8 @@
   font: 15px 'Poppins',sans-serif;
   font-weight: 600;
   margin: 0;
+  display: flex;
+  justify-content: space-around;
 }
 .placeSearch {
   position: relative;
@@ -102,7 +104,6 @@
   font-weight: 600;
   border:1px solid transparent;
   text-decoration: none;
-  padding: 10px;
 }
 
 .cartLink .cart-text:hover{

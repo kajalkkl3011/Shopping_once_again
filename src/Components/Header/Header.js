@@ -5,7 +5,7 @@ import { PostContext } from "../../contextStore/PostContext";
 import "./Header.css";
 import OlxLogo from "../../assets/OlxLogo";
 import Cart from "../../assets/cart";
-import Order from "../../assets/order";
+// import Order from "../../assets/order";
 import SearchIcon from "../../assets/SearchIcon"
 import Arrow from "../../assets/Arrow";
 import SellButton from "../../assets/SellButton";
@@ -13,7 +13,7 @@ import SellButtonPlus from "../../assets/SellButtonPlus";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contextStore/AuthContext";
 import { Firebase } from "../../firebase/config";
-import Search from "../Search/Search";
+// import Search from "../Search/Search";
 function Header() {
   const{allPost}=useContext(AllPostContext)
   const{setPostContent}=useContext(PostContext)
@@ -102,12 +102,13 @@ function Header() {
 
         
           <div className="cartLink">
+          {/* <a href="#" class="cart-text">Cart <i class="fa fa-shopping-cart"></i></a> */}
           <Cart></Cart>
         </div>
         
-        <div className="orderLink">
+        {/* <div className="orderLink">
           <Order></Order>
-        </div>
+        </div> */}
         <Link to="/create">
   
           <div className="sellMenu">
