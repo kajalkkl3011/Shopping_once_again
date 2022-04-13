@@ -28,12 +28,6 @@
   margin:2em;
 }
 
-.moreView .cards {
-  white-space: nowrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
-}
-
 
 .recommendations {
   margin: 16px 16px 24px;
@@ -63,7 +57,4 @@
 }
 .quick-menu-cards{
   display: inline;
-  white-space: nowrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
 }

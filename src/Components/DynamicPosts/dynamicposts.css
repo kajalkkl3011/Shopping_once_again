@@ -22,7 +22,7 @@
   }
   
   .moreView .cards {
-    white-space: nowrap;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }

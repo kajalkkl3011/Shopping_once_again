@@ -25,16 +25,16 @@ function Footer() {
           </div>
           <div className="list">
             <ul>
-              <li>About OLX Group</li>
+              <li>About Group</li>
               <li>Careers</li>
               <li>Contact Us</li>
-              <li>OLXPeople</li>
+              <li>People</li>
             </ul>
           </div>
         </div>
         <div>
           <div className="heading">
-            <p>OLX</p>
+            <p>SOA</p>
           </div>
           <div className="list">
             <ul>

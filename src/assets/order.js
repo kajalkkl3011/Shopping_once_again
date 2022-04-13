@@ -2,6 +2,6 @@ import React from 'react'
 
 export default  function Order() {
     return(  
-        <a href="#" class="order-text">Order <i class="fa fa-shopping-bag"></i></a>    
+        <a href="#" className="order-text">Order <i className="fa fa-shopping-bag"></i></a>    
       )
 }

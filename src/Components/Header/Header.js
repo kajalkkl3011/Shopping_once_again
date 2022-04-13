@@ -102,7 +102,6 @@ function Header() {
 
         
           <div className="cartLink">
-          {/* <a href="#" class="cart-text">Cart <i class="fa fa-shopping-cart"></i></a> */}
           <Cart></Cart>
         </div>
         

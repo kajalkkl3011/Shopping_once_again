@@ -6,7 +6,7 @@ function wishList(props) {
         <div className='main-div'>
             <div className='main-wrapper'>
                 <div className='header-wrapper'>
-                <i class="fa fa-heart-o wishlist-icon" aria-hidden="true"></i>
+                <i className="fa fa-heart-o wishlist-icon" aria-hidden="true"></i>
                 <h1>My Wishlist</h1>
                 </div>
                 <div className='table-wrapper'>
@@ -21,7 +21,7 @@ function wishList(props) {
                             <td>
                                 <div className="wishlist-item">
                                     
-                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            <i className="fa fa-trash-o" aria-hidden="true"></i>
                             <img src="https://rukminim2.flixcart.com/image/332/398/kwqq1zk0/sari/o/c/w/free-coco-m-maroon-shop-lady-unstitched-original-imag9csmf8ac4xza.jpeg?q=50" alt="" className='wishlist-img'/>
                             <h3>Patola Saree</h3>
                                 </div>
@@ -40,7 +40,7 @@ function wishList(props) {
                         <td>
                                 <div className="wishlist-item">
                                     
-                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            <i className="fa fa-trash-o" aria-hidden="true"></i>
                             <img src="https://rukminim2.flixcart.com/image/332/398/kwqq1zk0/sari/o/c/w/free-coco-m-maroon-shop-lady-unstitched-original-imag9csmf8ac4xza.jpeg?q=50" alt="" className='wishlist-img'/>
                             <h3>Patola Saree</h3>
                                 </div>

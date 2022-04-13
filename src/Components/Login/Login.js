@@ -25,7 +25,7 @@ function Login() {
     {loading && <RoundLoading/> }
     <div className="login-sign-up-wrap">
       <div className="loginParentDiv from-wrap">
-      <div class="soa-logo"><a href="/">SOA</a></div>
+      <div className="soa-logo"><a href="/">SOA</a></div>
         <form onSubmit={handleSubmit}>
           <label>Email</label>
           <br />

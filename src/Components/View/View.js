@@ -49,7 +49,7 @@ function View() {
           </div>
         }
        <div className="cart-action">
-          <button className="btn" onClick={console.log('handle wish list here.')}><i class="fa fa-shopping-bag"></i>Wish List</button>
+          <button className="btn" onClick={console.log('handle wish list here.')}><i className="fa fa-shopping-bag"></i>Wish List</button>
        </div>
       </div>
     </div>
