@@ -1,34 +1,44 @@
-import React,{useContext} from 'react'
-import Heart from '../../assets/Heart'
-import {useHistory} from "react-router-dom";
-import {PostContext} from "../../contextStore/PostContext";
-import "./postcards.css"
+import React, { useContext, useState } from "react";
+import Heart from "../../assets/Heart";
+import { useHistory } from "react-router-dom";
+import { PostContext } from "../../contextStore/PostContext";
+import "./postcards.css";
 
-function PostCards({product,index}) {
-    let {setPostContent} = useContext(PostContext)//at the time of onClick on post ,the specified post item assigned to postContent by setPostContent function and it will be stored in a global context PostContext
- 
-    const history=useHistory()//at the time of onClick on post , we want redirect to the view post page
+function PostCards({ product, index }) {
+  let { setPostContent } = useContext(PostContext); //at the time of onClick on post ,the specified post item assigned to postContent by setPostContent function and it will be stored in a global context PostContext
+  const [wishListItem, setWishListItem] = useState(JSON.parse(localStorage.getItem("wishlistItem")) || [])
+  const history = useHistory(); //at the time of onClick on post , we want redirect to the view post page
 
-    const addToWishlist = (product) => {
-      const products = JSON.parse(localStorage.getItem('products')) || [];
-      const index = products.findIndex(pr => pr.id === product.id);
-      if(index !== -1) {
-        products.splice(index, 1);
-      } else {
-        products.push(product);
-      }
-      localStorage.setItem('products', JSON.stringify(products));
+  const addToWishlist = (product) => {
+    const wishlistItem = [...wishListItem];
+    const index = wishlistItem.findIndex((pr) => pr.id === product.id);
+    if (index !== -1) {
+      wishlistItem.splice(index, 1);
+    } else {
+      wishlistItem.push(product);
     }
+    localStorage.setItem("wishlistItem", JSON.stringify(wishlistItem));
+    setWishListItem(wishlistItem);
+  };
 
-    return (
-      <div className="card" key={index} onClick={()=>{
-        setPostContent(product);
-        history.push("/view");
-        // addToWishlist(product);
-      }}>
-        <div className="favorite">
-          <Heart></Heart>
-        </div>
+  const getWishListColor =() =>{
+    // const wishlistItem = JSON.parse(localStorage.getItem("wishlistItem")) || [];
+    const index = wishListItem.findIndex((pr) => pr.id === product.id);
+    return index > -1 ? "red": "black"
+  }
+
+  return (
+    <div className="card" key={index}>
+      <div className="favorite" onClick={() => addToWishlist(product)}>
+        <Heart color={getWishListColor()}></Heart>
+      </div>
+      <div
+        onClick={() => {
+          setPostContent(product);
+          history.push("/view");
+          // addToWishlist(product);
+        }}
+      >
         <div className="image">
           <img src={product.url} alt="" />
         </div>
@@ -41,8 +51,8 @@ function PostCards({product,index}) {
           <span>{product.createdAt}</span>
         </div>
       </div>
-       
-    )
+    </div>
+  );
 }
 
-export default PostCards
+export default PostCards;

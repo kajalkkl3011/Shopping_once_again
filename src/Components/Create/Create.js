@@ -17,27 +17,33 @@ const Create = () => {
   const handleSubmit = () => {
     setLoading(true);
     let date = new Date().toDateString();
-    Firebase.storage()
-      .ref(`/image/${image.name}`)
-      .put(image)
-      .then(({ ref }) => {
-        ref.getDownloadURL().then((url) => {
-          Firebase.firestore()
-            .collection("products")
-            .add({
-              name,
-              category,
-              price,
-              description,
-              url,
-              userId: user.uid,
-              createdAt: date,
-            })
-            .then(() => {
-              history.push("/");
-            });
-        });
-      });
+    let products = JSON.parse(localStorage.getItem("products")) || [];
+    products.push({
+      name,category,createdAt:date,price,description,url:image,userId: user.uid
+    })
+    localStorage.setItem("products", JSON.stringify(products));
+    setLoading(false);
+    // Firebase.storage()
+    //   .ref(`/image/${image.name}`)
+    //   .put(image)
+    //   .then(({ ref }) => {
+    //     ref.getDownloadURL().then((url) => {
+    //       Firebase.firestore()
+    //         .collection("products")
+    //         .add({
+    //           name,
+    //           category,
+    //           price,
+    //           description,
+    //           url,
+    //           userId: user.uid,
+    //           createdAt: date,
+    //         })
+    //         .then(() => {
+    //           history.push("/");
+    //         });
+    //     });
+    //   });
   };
   return (
     <Fragment>
@@ -98,18 +104,19 @@ const Create = () => {
         <br />
 
         <br />
+        {image && 
         <img
           alt="Posts"
           width="200px"
           height="200px"
-          src={image ? URL.createObjectURL(image) : ""}
-        ></img>
+          src={image}
+        ></img>}
 
         <br />
         <input
-          type="file"
+          type="url"
           onChange={(e) => {
-            setImage(e.target.files[0]);
+            setImage(e.target.value);
           }}
         />
         <br />

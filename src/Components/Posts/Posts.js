@@ -7,11 +7,12 @@ import BarLoading from "../Loading/BarLoading";
 import PostCards from "../PostCards/PostCards";
 
 import { AllPostContext } from "../../contextStore/AllPostContext";
+import {postData} from "../../constant/constant";
 
 function Posts() {
   const { setAllPost } = useContext(AllPostContext);
-  let [posts, setPosts] = useState([]); //for showing all posts in Descending order of date
-  let [posts2, setPosts2] = useState([]); //for showing all posts in Ascending order of date
+  let [posts, setPosts] = useState(JSON.parse(localStorage.getItem("products"))||[]); //for showing all posts in Descending order of date
+  let [posts2, setPosts2] = useState(JSON.parse(localStorage.getItem("products"))||[]); //for showing all posts in Ascending order of date
   let [loading, setLoading] = useState(false);
   let [loading2,setLoading2] = useState(false)
   useEffect(() => {
@@ -22,14 +23,18 @@ function Posts() {
       .orderBy("createdAt", "desc")
       .get()
       .then((snapshot) => {
-        let allPostsDescendingOder = snapshot.docs.map((product) => {
-          return {
-            ...product.data(),
-            id: product.id,
-          };
-        });
-        setPosts2(allPostsDescendingOder); //set to post
-        setAllPost(allPostsDescendingOder);
+        // let allPostsDescendingOder = snapshot.docs.map((product) => {
+        //   return {
+        //     ...product.data(),
+        //     id: product.id,
+        //   };
+        // });
+        // console.log(JSON.stringify(allPostsDescendingOder, null,2));
+        if(posts.length === 0 ){
+          setPosts2(postData); //set to postData
+          setAllPost(postData);
+          localStorage.setItem("products", JSON.stringify(postData));
+        }
         setLoading(false);
       });
     Firebase.firestore() //retreving all posts from firebase in asecnding order of date
@@ -37,13 +42,17 @@ function Posts() {
       .orderBy("createdAt", "asc")
       .get()
       .then((snapshot) => {
-        let allPostsAscendingOder = snapshot.docs.map((product) => {
-          return {
-            ...product.data(),
-            id: product.id,
-          };
-        });
-        setPosts(allPostsAscendingOder);
+        // let allPostsAscendingOder = snapshot.docs.map((product) => {
+        //   return {
+        //     ...product.data(),
+        //     id: product.id,
+        //   };
+        // });
+        if(posts2.length === 0 ){
+          setPosts2(postData); //set to postData
+          setAllPost(postData);
+          localStorage.setItem("products", JSON.stringify(postData));
+        }
         setLoading2(false)
         
       });

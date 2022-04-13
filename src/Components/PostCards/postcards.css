@@ -10,12 +10,16 @@
   
   .card .favorite {
     display: flex;
+    position: absolute;
+    right: 10px;
+    top:5px;
     justify-content: flex-end;
     align-items: center;
   }
   
   .card .image {
     display: flex;
+    margin-top: 25px;
     justify-content: center;
     align-items: center;
   }

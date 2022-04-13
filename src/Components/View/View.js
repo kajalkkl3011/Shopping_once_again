@@ -24,6 +24,12 @@ function View() {
         });
     }
   }, [history, postContent]);
+  const addToWishList = () => {
+    console.log(postContent);
+    let wishlistItem = JSON.parse(localStorage.getItem("wishlistItem"))||[];
+    wishlistItem.push(postContent);
+    localStorage.setItem("wishlistItem",JSON.stringify(wishlistItem));
+  }
   return (
     <div className="viewParentDiv">
       <div className="imageShowDiv">
@@ -49,7 +55,7 @@ function View() {
           </div>
         }
        <div className="cart-action">
-          <button className="btn" onClick={console.log('handle wish list here.')}><i className="fa fa-shopping-bag"></i>Wish List</button>
+          <button className="btn" onClick={addToWishList}><i className="fa fa-shopping-bag"></i>Wish List</button>
        </div>
       </div>
     </div>

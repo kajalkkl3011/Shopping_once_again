@@ -1,13 +1,13 @@
 import React from 'react'
 
-export default function Heart() {
+export default function Heart({color}) {
     return(
         <svg
         width="24px"
         height="24px"
         viewBox="0 0 1024 1024"
         data-aut-id="icon"
-        
+        fill={color || "black"}
         fillRule="evenodd"
       >
         <path
